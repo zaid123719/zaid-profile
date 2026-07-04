@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Zaid Khan | Official Personal Profile</title>
+
+  <!-- ============ SEO Meta ============ -->
+  <meta name="description" content="Official personal profile website of Zaid Khan from Khandwa, Madhya Pradesh. B.Tech Computer Science Engineer, medical store management, digital work, and professional contact." />
+  <meta name="keywords" content="Zaid Khan, Zaid Khan Khandwa, Zaid Medical Store, Computer Science Engineer, Medical Store Khandwa, Zaid Khan Profile, Zaid Khan Official Website" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Zaid Khan" />
+  <meta name="theme-color" content="#030712" />
+  <link rel="canonical" href="https://zaid123719.github.io/zaid-profile/" />
+
+  <!-- ============ Open Graph ============ -->
+  <meta property="og:title" content="Zaid Khan | Official Personal Profile" />
+  <meta property="og:description" content="Official personal profile of Zaid Khan from Khandwa, Madhya Pradesh." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zaid123719.github.io/zaid-profile/" />
+  <meta property="og:image" content="https://zaid123719.github.io/zaid-profile/zaid-profile.jpg" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- ============ Twitter Card ============ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zaid Khan | Official Personal Profile" />
+  <meta name="twitter:description" content="Official personal profile of Zaid Khan from Khandwa, Madhya Pradesh." />
+  <meta name="twitter:image" content="https://zaid123719.github.io/zaid-profile/zaid-profile.jpg" />
+
+  <!-- ============ iPhone / mobile polish ============ -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Zero-asset "ZK" monogram favicon (no external file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23070B14'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234F8CFF'/%3E%3Cstop offset='1' stop-color='%2322D3EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext x='32' y='42' font-family='Arial, sans-serif' font-weight='700' font-size='26' fill='url(%23g)' text-anchor='middle'%3EZK%3C/text%3E%3C/svg%3E" />
+
+  <!-- ============ Fonts (Google Fonts CDN) ============ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ============ Font Awesome (CDN) ============ -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- ============ Stylesheet (inlined — single-file build) ============ -->
+  <style>
+/* =============================================================
+   Zaid Khan — Official Personal Profile
+   style.css — plain CSS, no preprocessor, no framework
+
+   TABLE OF CONTENTS
+   1.  Variables & theme
+   2.  Reset & base
+   3.  Typography
+   4.  Layout utilities
+   5.  Accessibility helpers
+   6.  Background FX (orbs, grid, noise)
+   7.  Custom cursor & spotlight glow
+   8.  Loading screen
+   9.  Scroll progress bar
+   10. Navbar & mobile menu
+   11. Buttons
+   12. Badges & chips
+   13. Glass card system
+   14. Hero
+   15. Bento grid (quick identity)
+   16. About
+   17. Work cards
+   18. Timeline
+   19. Skills
+   20. Identity / digital ID card
+   21. Connected-with section
+   22. Contact
+   23. Footer
+   24. Floating action buttons
+   25. Section dividers
+   26. Scroll-reveal animation
+   27. Responsive breakpoints
+   28. Reduced-motion support
+   ============================================================= */
+
+
+/* ---------- 1. Variables & theme ---------- */
+:root {
+  /* Core palette (from brief) */
+  --bg: #030712;
+  --navy: #07111F;
+  --surface: #0B1220;
+  --blue: #4F8CFF;
+  --cyan: #22D3EE;
+  --emerald: #34D399;
+  --purple: #8B5CF6; /* extra accent for orb variety, matches brief's "purple hints" */
+  --white: #F8FAFC;
+  --muted: #94A3B8;
+  --border: rgba(255, 255, 255, 0.16);
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-strong: rgba(255, 255, 255, 0.12);
+  --shadow-color: rgba(3, 7, 18, 0.55);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--blue), var(--cyan));
+  --gradient-name: linear-gradient(120deg, var(--white) 0%, var(--blue) 35%, var(--cyan) 65%, var(--emerald) 100%);
+  --gradient-border: linear-gradient(135deg, var(--blue), var(--cyan), var(--emerald));
+
+  /* Typography */
+  --font-heading: 'Sora', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --space-xs: .5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6.5rem;
+
+  /* Radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease: cubic-bezier(.16,.8,.24,1);
+  --dur-fast: .25s;
+  --dur: .5s;
+
+  /* Layout */
+  --container-w: 1200px;
+  --navbar-h: 84px;
+}
+
+/* ---------- 2. Reset & base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.is-loading { overflow: hidden; height: 100vh; }
+body.menu-open { overflow: hidden; }
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font: inherit; background: none; border: none; cursor: pointer; color: inherit; }
+i { line-height: 1; }
+
+section[id] { scroll-margin-top: var(--navbar-h); }
+
+/* Keep every fixed/main layer in a predictable stack.
+   NOTE: each element below also gets its own explicit `position` in its
+   own section — this block only assigns z-index, so it can never fight
+   a more specific rule over `position` (a real bug that used to be here). */
+.bg-fx            { z-index: 0; }
+main, footer      { position: relative; z-index: 1; }
+.navbar           { z-index: 500; }
+.floating-whatsapp, .floating-call { z-index: 400; }
+.mobile-menu      { z-index: 900; }
+.scroll-progress  { z-index: 950; }
+.cursor-glow      { z-index: 40; }
+.cursor-ring      { z-index: 9998; }
+.cursor-dot       { z-index: 9999; }
+.loader           { z-index: 10000; }
+
+
+/* ---------- 3. Typography ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--white);
+}
+h2 { font-size: clamp(1.9rem, 3.2vw, 2.75rem); margin-bottom: var(--space-sm); }
+h3 { font-size: 1.2rem; margin-bottom: .5rem; }
+p  { color: var(--muted); }
+strong { color: var(--white); }
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .75rem;
+  color: var(--cyan);
+  margin-bottom: var(--space-xs);
+}
+
+.gradient-text {
+  background: var(--gradient-name);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 6s ease infinite;
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+
+/* ---------- 4. Layout utilities ---------- */
+.container { max-width: var(--container-w); margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+.section { padding: var(--space-2xl) 0; }
+.section-head { max-width: 640px; margin: 0 auto var(--space-lg); text-align: left; }
+
+
+/* ---------- 5. Accessibility helpers ---------- */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+.skip-link {
+  position: absolute; left: 1rem; top: -60px; z-index: 10001;
+  background: var(--white); color: var(--bg);
+  padding: .75rem 1.25rem; border-radius: var(--radius-sm);
+  font-weight: 600; transition: top .3s var(--ease);
+}
+.skip-link:focus { top: 1rem; }
+
+a:focus-visible, button:focus-visible, .chip:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+
+/* ---------- 6. Background FX (orbs, grid, noise) ---------- */
+.bg-fx { position: fixed; inset: 0; overflow: hidden; pointer-events: none; }
+
+.orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .32; will-change: transform; }
+.orb-blue    { width: 480px; height: 480px; top: -100px; left: -80px;  background: var(--blue);    animation: float-a 20s ease-in-out infinite; }
+.orb-cyan    { width: 420px; height: 420px; top: 8%;     right: -100px; background: var(--cyan);    animation: float-b 24s ease-in-out infinite; }
+.orb-emerald { width: 460px; height: 460px; bottom: -110px; left: 6%;  background: var(--emerald); animation: float-c 27s ease-in-out infinite; }
+.orb-purple  { width: 500px; height: 500px; bottom: -130px; right: 4%; background: var(--purple);  animation: float-d 22s ease-in-out infinite; }
+
+@keyframes float-a { 0%,100% { transform: translate(0,0) scale(1); }    50% { transform: translate(60px,45px) scale(1.1); } }
+@keyframes float-b { 0%,100% { transform: translate(0,0) scale(1); }    50% { transform: translate(-45px,55px) scale(1.05); } }
+@keyframes float-c { 0%,100% { transform: translate(0,0) scale(1); }    50% { transform: translate(45px,-35px) scale(1.08); } }
+@keyframes float-d { 0%,100% { transform: translate(0,0) scale(1); }    50% { transform: translate(-55px,-40px) scale(1.1); } }
+
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(circle at 50% 0%, black, transparent 70%);
+  mask-image: radial-gradient(circle at 50% 0%, black, transparent 70%);
+}
+
+.bg-noise {
+  position: absolute; inset: 0;
+  opacity: .035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+
+/* ---------- 7. Custom cursor & spotlight glow ---------- */
+.cursor-dot, .cursor-ring {
+  position: fixed; top: 0; left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.cursor-dot {
+  width: 8px; height: 8px;
+  background: var(--cyan);
+  transition: opacity .3s;
+}
+.cursor-ring {
+  width: 38px; height: 38px;
+  border: 1.5px solid rgba(255,255,255,.55);
+  mix-blend-mode: difference;
+  transition: width .3s var(--ease), height .3s var(--ease), border-color .3s, opacity .3s;
+}
+.cursor-ring.cursor-hover { width: 64px; height: 64px; border-color: var(--cyan); }
+
+.cursor-glow {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  background: radial-gradient(560px circle at var(--x, 50%) var(--y, 50%), rgba(79,140,255,.55), transparent 60%);
+  opacity: .55;
+}
+
+/* Hide the bespoke cursor whenever a fine pointer isn't available (mobile/touch) */
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot, .cursor-ring, .cursor-glow { display: none; }
+}
+/* JS also adds/omits this class as a belt-and-braces check */
+body:not(.has-custom-cursor) .cursor-dot,
+body:not(.has-custom-cursor) .cursor-ring,
+body:not(.has-custom-cursor) .cursor-glow { display: none; }
+
+
+/* ---------- 8. Loading screen ---------- */
+.loader {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 50% 40%, var(--surface), var(--bg) 70%);
+  transition: opacity .6s var(--ease), visibility .6s var(--ease);
+}
+.loader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-inner { text-align: center; padding: 0 1.5rem; }
+.loader-name {
+  font-family: var(--font-heading); font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3rem);
+  letter-spacing: -0.02em;
+  background: var(--gradient-name);
+  background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: gradient-shift 3s ease infinite;
+}
+.loader-sub {
+  font-family: var(--font-mono); font-size: .78rem;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--muted); margin-top: .6rem;
+}
+.loader-bar {
+  width: 160px; height: 2px; margin: 1.75rem auto 0;
+  background: rgba(255,255,255,.1); border-radius: 2px; overflow: hidden;
+}
+.loader-bar span {
+  display: block; width: 40%; height: 100%;
+  background: var(--gradient-primary);
+  animation: loader-shimmer 1s ease-in-out infinite;
+}
+@keyframes loader-shimmer { 0% { transform: translateX(-120%); } 100% { transform: translateX(360%); } }
+
+
+/* ---------- 9. Scroll progress bar ---------- */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: var(--gradient-primary);
+}
+
+
+/* ---------- 10. Navbar & mobile menu ---------- */
+.navbar { position: fixed; top: 0; left: 0; right: 0; padding: 1.15rem clamp(1rem,4vw,2rem) 0; }
+
+.nav-container {
+  max-width: var(--container-w); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .6rem .7rem .6rem 1.25rem;
+  border-radius: var(--radius-pill);
+  transition: background .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
+}
+.navbar.scrolled .nav-container {
+  background: rgba(7,17,31,.78);
+  box-shadow: 0 20px 40px -20px var(--shadow-color);
+  border-color: rgba(255,255,255,.22);
+}
+
+.nav-brand { display: flex; align-items: center; gap: .6rem; font-family: var(--font-heading); font-weight: 600; }
+.brand-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 10px;
+  background: var(--gradient-primary); color: var(--bg);
+  font-weight: 700; font-size: .82rem;
+  transition: transform .3s var(--ease);
+}
+.nav-brand:hover .brand-mark { transform: scale(1.08) rotate(-4deg); }
+.brand-name { font-size: .98rem; }
+
+.nav-links { display: flex; align-items: center; gap: 1.7rem; }
+.nav-link { position: relative; font-size: .92rem; color: var(--muted); padding: .4rem 0; transition: color .3s; }
+.nav-link:hover, .nav-link.active { color: var(--white); }
+.nav-link.active::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
+  background: var(--gradient-primary); border-radius: 2px;
+}
+
+.hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 30px; height: 30px; padding: 0; }
+.hamburger span { display: block; height: 2px; background: var(--white); border-radius: 2px; transition: transform .35s var(--ease), opacity .35s var(--ease); }
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
+  background: rgba(3,7,18,.92);
+  backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+  opacity: 0; visibility: hidden; transform: translateY(-16px);
+  transition: opacity .4s var(--ease), visibility .4s var(--ease), transform .4s var(--ease);
+}
+.mobile-menu.open { opacity: 1; visibility: visible; transform: translateY(0); }
+.mobile-menu nav { display: flex; flex-direction: column; align-items: center; gap: 1.6rem; }
+.mobile-link { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 600; color: var(--white); }
+
+
+/* ---------- 11. Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .85rem 1.6rem; border-radius: var(--radius-pill);
+  font-family: var(--font-body); font-weight: 600; font-size: .95rem;
+  white-space: nowrap;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease), border-color .3s, color .3s;
+}
+.btn-primary {
+  background: var(--gradient-primary); color: var(--bg);
+  position: relative; overflow: hidden;
+  box-shadow: 0 12px 30px -12px rgba(79,140,255,.55);
+}
+.btn-primary::after {
+  content: ''; position: absolute; top: 0; left: -60%; width: 45%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent);
+  transform: skewX(-20deg); transition: left .6s var(--ease);
+}
+.btn-primary:hover::after { left: 130%; }
+.btn-primary:hover { box-shadow: 0 16px 40px -14px rgba(79,140,255,.75); }
+
+.btn-secondary {
+  background: var(--glass); border: 1px solid var(--border); color: var(--white);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.btn-secondary:hover { background: var(--glass-strong); border-color: rgba(255,255,255,.32); }
+
+.btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); }
+.btn-ghost:hover { color: var(--white); border-color: rgba(255,255,255,.32); }
+
+.btn-sm { padding: .6rem 1.15rem; font-size: .85rem; }
+.nav-cta span { display: inline; }
+
+
+/* ---------- 12. Badges & chips ---------- */
+.badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .5rem 1rem; border-radius: var(--radius-pill);
+  background: var(--glass); border: 1px solid var(--border);
+  font-size: .8rem; color: var(--muted);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  margin-bottom: 1.4rem;
+}
+.badge i { color: var(--cyan); }
+
+.trust-badges { display: flex; flex-wrap: wrap; gap: .75rem 1.4rem; margin-top: 2rem; }
+.trust-badges li { display: flex; align-items: center; gap: .5rem; font-size: .82rem; color: var(--muted); font-family: var(--font-mono); }
+.trust-badges i { color: var(--cyan); }
+
+.chip-list { display: flex; flex-wrap: wrap; gap: .7rem; margin-bottom: 2.5rem; }
+.chip {
+  padding: .55rem 1.15rem; border-radius: var(--radius-pill);
+  background: var(--glass); border: 1px solid var(--border); font-size: .85rem;
+  transition: transform .3s var(--ease), background .3s, border-color .3s;
+}
+.chip:hover { transform: translateY(-3px); background: var(--glass-strong); border-color: var(--cyan); }
+
+
+/* ---------- 13. Glass card system ---------- */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 30px 60px -30px var(--shadow-color);
+  transition: border-color .3s var(--ease), transform .1s ease-out;
+}
+.glass:hover { border-color: rgba(255,255,255,.28); }
+
+.tilt-card { transition: transform .1s ease-out, border-color .3s var(--ease); }
+
+.icon-box {
+  width: 52px; height: 52px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, rgba(79,140,255,.22), rgba(34,211,238,.14));
+  border: 1px solid var(--border);
+  font-size: 1.25rem; color: var(--cyan);
+  margin-bottom: 1.25rem;
+  transition: box-shadow .3s, transform .3s;
+}
+.tilt-card:hover .icon-box { box-shadow: 0 0 26px rgba(34,211,238,.4); transform: translateY(-2px); }
+
+
+/* ---------- 14. Hero ---------- */
+.hero { padding: calc(var(--navbar-h) + 2.5rem) 0 4rem; min-height: 100vh; display: flex; align-items: center; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+
+.hero-title { font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin-bottom: .9rem; }
+.hero-headline { font-family: var(--font-mono); font-size: .92rem; color: var(--cyan); letter-spacing: .01em; margin-bottom: .6rem; }
+.hero-subheading { font-size: 1.05rem; color: var(--white); opacity: .85; margin-bottom: 1rem; }
+.hero-desc { max-width: 520px; margin-bottom: 2rem; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.25rem; }
+
+.photo-frame {
+  position: relative;
+  width: min(420px, 100%);
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 40px 80px -30px var(--shadow-color);
+  animation: photo-float 6s ease-in-out infinite;
+}
+@keyframes photo-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
+.photo-glow {
+  position: absolute; inset: -40px; z-index: -1;
+  background: radial-gradient(circle, rgba(79,140,255,.35), transparent 65%);
+  filter: blur(10px);
+  opacity: .75; transition: opacity .4s;
+}
+.photo-frame:hover .photo-glow { opacity: 1; }
+
+.photo-wrap { position: relative; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 1 / 1; background: var(--surface); }
+.photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.photo-fallback {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--surface), var(--navy));
+}
+.photo-fallback span {
+  font-family: var(--font-heading); font-size: 4rem; font-weight: 700;
+  background: var(--gradient-name); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.photo-reflection {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(160deg, rgba(255,255,255,.18), transparent 45%);
+}
+
+.floating-badge {
+  position: absolute;
+  display: flex; align-items: center; gap: .4rem;
+  padding: .55rem 1rem; border-radius: var(--radius-pill);
+  background: var(--glass-strong); border: 1px solid var(--border);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  font-size: .76rem; font-family: var(--font-mono);
+  box-shadow: 0 20px 40px -20px var(--shadow-color);
+  animation: badge-float 5s ease-in-out infinite;
+  white-space: nowrap;
+}
+.floating-badge i { color: var(--cyan); }
+.fb-1 { top: -6%;  left: -10%;  animation-delay: 0s; }
+.fb-2 { top: 10%;  right: -14%; animation-delay: .8s; }
+.fb-3 { bottom: 14%; left: -16%; animation-delay: 1.6s; }
+.fb-4 { bottom: -6%; right: -8%; animation-delay: 2.4s; }
+@keyframes badge-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+
+/* ---------- 15. Bento grid (quick identity) ---------- */
+.bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; }
+.bento-card { padding: 2rem; }
+.bento-card:nth-child(1) { grid-column: span 5; }
+.bento-card:nth-child(2) { grid-column: span 7; }
+.bento-card:nth-child(3) { grid-column: span 7; }
+.bento-card:nth-child(4) { grid-column: span 5; }
+.bento-card h3 { font-size: 1.05rem; }
+.bento-card p { font-size: .9rem; }
+
+
+/* ---------- 16. About ---------- */
+.about-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 3rem; align-items: start; }
+.about-text blockquote {
+  margin-top: 1.5rem; padding-left: 1.25rem; border-left: 3px solid var(--cyan);
+  font-style: italic; color: var(--white); font-size: 1.05rem;
+}
+.about-card { padding: 2rem; }
+.info-list li { display: flex; justify-content: space-between; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--border); font-size: .9rem; }
+.info-list li:last-child { border-bottom: none; }
+.info-list span { color: var(--muted); font-family: var(--font-mono); font-size: .78rem; }
+.info-list strong { font-weight: 600; text-align: right; }
+
+
+/* ---------- 17. Work cards ---------- */
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.work-card { padding: 2rem; }
+.work-card p { font-size: .92rem; }
+
+
+/* ---------- 18. Timeline ---------- */
+.timeline { position: relative; max-width: 760px; margin: 0 auto; padding-left: 2.5rem; }
+.timeline::before {
+  content: ''; position: absolute; left: 11px; top: 6px; bottom: 6px; width: 2px;
+  background: linear-gradient(var(--blue), var(--cyan), var(--emerald)); border-radius: 2px;
+}
+.timeline-item { position: relative; margin-bottom: 2.25rem; }
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-dot {
+  position: absolute; left: -2.5rem; top: 0;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--surface); border: 2px solid var(--cyan);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .65rem; color: var(--cyan);
+}
+.timeline-card { padding: 1.5rem 1.75rem; }
+.timeline-card p { font-size: .92rem; }
+
+
+/* ---------- 19. Skills ---------- */
+.progress-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+.progress-card { padding: 1.5rem; }
+.progress-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .85rem; font-size: .9rem; }
+.progress-top em { font-style: normal; color: var(--cyan); font-family: var(--font-mono); font-size: .74rem; }
+.progress-bar { height: 6px; border-radius: 6px; background: rgba(255,255,255,.08); overflow: hidden; }
+.progress-bar span { display: block; height: 100%; border-radius: 6px; background: var(--gradient-primary); }
+
+
+/* ---------- 20. Identity / digital ID card ---------- */
+.identity-grid { display: grid; grid-template-columns: 1fr .85fr; gap: 3rem; align-items: center; }
+
+.id-card-outer {
+  padding: 2px; border-radius: calc(var(--radius-lg) + 2px);
+  background: var(--gradient-border);
+  box-shadow: 0 40px 80px -30px var(--shadow-color);
+}
+.id-card {
+  position: relative; overflow: hidden;
+  padding: 2.25rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, rgba(11,18,32,.94), rgba(7,17,31,.96));
+}
+.id-card-shine {
+  position: absolute; top: -60%; left: -20%; width: 55%; height: 220%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.12), transparent);
+  transform: translateX(-40%) rotate(20deg);
+  animation: id-shine 5s ease-in-out infinite;
+}
+@keyframes id-shine {
+  0%   { transform: translateX(-40%) rotate(20deg); }
+  100% { transform: translateX(220%) rotate(20deg); }
+}
+.id-card-top { display: flex; align-items: center; gap: .75rem; margin-bottom: 1.75rem; }
+.id-chip {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: var(--gradient-primary);
+  display: flex; align-items: center; justify-content: center; color: var(--bg);
+}
+.id-tag { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .16em; color: var(--muted); }
+.id-name { font-size: 1.6rem; margin-bottom: .15rem; }
+.id-status { color: var(--cyan); font-size: .85rem; margin-bottom: 1.5rem; }
+.id-fields li { display: flex; justify-content: space-between; gap: 1rem; padding: .75rem 0; border-bottom: 1px solid var(--border); font-size: .85rem; }
+.id-fields li:last-child { border-bottom: none; }
+.id-fields span { color: var(--muted); }
+.id-fields strong { text-align: right; font-weight: 600; }
+
+
+/* ---------- 21. Connected-with section ---------- */
+.connected-inner { padding: clamp(2rem, 4vw, 3.5rem); display: grid; grid-template-columns: 1.1fr .9fr; gap: 2.5rem; align-items: center; }
+.connected-text p { margin-bottom: 1.5rem; }
+.connected-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.connected-card {
+  display: flex; align-items: center; gap: .75rem;
+  padding: 1rem 1.1rem; border-radius: var(--radius-md);
+  background: rgba(255,255,255,.05); border: 1px solid var(--border);
+  font-size: .85rem; color: var(--white);
+}
+.connected-card i { color: var(--emerald); font-size: 1.1rem; }
+
+
+/* ---------- 22. Contact ---------- */
+.contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2.5rem; }
+.contact-card { padding: 2rem; text-align: left; display: flex; flex-direction: column; gap: .35rem; }
+.contact-card p { font-size: .92rem; }
+.contact-card .btn { margin-top: 1rem; align-self: flex-start; }
+
+.final-cta { padding: clamp(2rem, 4vw, 3rem); text-align: center; }
+.final-cta p { max-width: 460px; margin: 0 auto; }
+.final-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+
+
+/* ---------- 23. Footer ---------- */
+.footer { position: relative; z-index: 1; padding: 4rem 0 2rem; border-top: 1px solid var(--border); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
+.footer-brand p { margin-top: .6rem; font-size: .85rem; }
+.footer-col h4 { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 1rem; font-family: var(--font-mono); }
+.footer-col a { display: block; margin-bottom: .65rem; font-size: .9rem; color: var(--muted); transition: color .3s; }
+.footer-col a:hover { color: var(--cyan); }
+.footer-bottom {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: .75rem;
+  padding-top: 2rem; border-top: 1px solid var(--border);
+  font-size: .8rem; color: var(--muted);
+}
+.footer-note { opacity: .75; }
+
+
+/* ---------- 24. Floating action buttons ---------- */
+.floating-whatsapp {
+  position: fixed;
+  bottom: calc(28px + env(safe-area-inset-bottom));
+  right: 28px;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #25D366; color: #fff;
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+  box-shadow: 0 16px 32px -12px rgba(37,211,102,.6);
+  transition: transform .3s var(--ease);
+}
+.floating-whatsapp:hover { transform: scale(1.08); }
+.pulse-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid #25D366; animation: pulse-ring 2.2s ease-out infinite; }
+@keyframes pulse-ring { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(1.9); opacity: 0; } }
+
+.floating-call {
+  position: fixed;
+  bottom: calc(28px + env(safe-area-inset-bottom));
+  left: 28px;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--glass-strong); border: 1px solid var(--border);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  display: none; align-items: center; justify-content: center; color: var(--white); font-size: 1.2rem;
+}
+@media (max-width: 760px) { .floating-call { display: flex; } }
+
+
+/* ---------- 25. Section dividers ---------- */
+.section-divider {
+  height: 1px; max-width: var(--container-w); margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+
+/* ---------- 26. Scroll-reveal animation ---------- */
+[data-reveal] {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+[data-reveal].in-view { opacity: 1; transform: none; }
+
+
+/* ---------- 27. Responsive breakpoints ---------- */
+@media (max-width: 1080px) {
+  .hero-grid, .about-grid, .identity-grid, .connected-inner { grid-template-columns: 1fr; }
+  .hero-visual { order: -1; margin-bottom: 1rem; }
+  .bento-card:nth-child(1), .bento-card:nth-child(2),
+  .bento-card:nth-child(3), .bento-card:nth-child(4) { grid-column: span 6; }
+  .work-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 760px) {
+  :root { --space-2xl: 4.5rem; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+
+  .bento-card:nth-child(1), .bento-card:nth-child(2),
+  .bento-card:nth-child(3), .bento-card:nth-child(4) { grid-column: span 12; }
+  .work-grid, .progress-grid, .contact-grid, .connected-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+
+  .timeline { padding-left: 2rem; }
+  .timeline-dot { left: -2rem; }
+
+  .hero { padding-top: calc(var(--navbar-h) + 1.5rem); min-height: auto; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { justify-content: center; }
+  .hero-desc { max-width: none; }
+
+  .photo-frame { width: min(320px, 78%); padding: 1.1rem; }
+  .floating-badge { font-size: .68rem; padding: .45rem .8rem; }
+  .fb-1 { left: -4%; top: -6%; }
+  .fb-2 { right: -6%; top: 6%; }
+  .fb-3 { left: -6%; bottom: 10%; }
+  .fb-4 { right: -4%; bottom: -4%; }
+
+  .final-cta-actions { flex-direction: column; }
+  .final-cta-actions .btn { justify-content: center; }
+}
+
+@media (max-width: 420px) {
+  .floating-badge .fb-label { display: none; } /* keep icon only, avoid overflow on very small phones */
+  .floating-badge { padding: .5rem; }
+}
+
+
+/* ---------- 28. Reduced-motion support ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] { opacity: 1; transform: none; }
+  .cursor-dot, .cursor-ring, .cursor-glow { display: none; }
+  .photo-frame, .floating-badge { animation: none; }
+}
+
+  </style>
+
+  <!-- ============ Structured Data: Person schema ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Zaid Khan",
+    "jobTitle": "Computer Science Engineering Graduate",
+    "description": "Official personal profile of Zaid Khan from Khandwa, Madhya Pradesh.",
+    "telephone": "+91 78058 33161",
+    "image": "https://zaid123719.github.io/zaid-profile/zaid-profile.jpg",
+    "url": "https://zaid123719.github.io/zaid-profile/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Khandwa",
+      "addressRegion": "Madhya Pradesh",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://zaid123719.github.io/zaid-medical-store/"
+    ]
+  }
+  </script>
+</head>
+<body class="is-loading">
+
+<!-- Skip link: keyboard/screen-reader users can jump straight to content -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ======================================================
+     Loading Screen — fades out ~900ms after DOM is ready
+     ====================================================== -->
+<div id="loader" class="loader" role="status" aria-live="polite">
+  <div class="loader-inner">
+    <p class="loader-name">Zaid Khan</p>
+    <p class="loader-sub">Official Personal Profile</p>
+    <div class="loader-bar"><span></span></div>
+  </div>
+</div>
+<noscript><style>#loader{display:none !important;}body{overflow:auto !important;}</style></noscript>
+
+<!-- ======================================================
+     Custom cursor + spotlight glow (hidden on touch via CSS,
+     positioned by script.js)
+     ====================================================== -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- Ambient background: floating orbs + grid + noise -->
+<div class="bg-fx" aria-hidden="true">
+  <span class="orb orb-blue"></span>
+  <span class="orb orb-cyan"></span>
+  <span class="orb orb-emerald"></span>
+  <span class="orb orb-purple"></span>
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+</div>
+
+<!-- ======================================================
+     Navbar
+     ====================================================== -->
+<header class="navbar" id="navbar">
+  <div class="nav-container glass">
+    <a href="#home" class="nav-brand" aria-label="Zaid Khan — home">
+      <span class="brand-mark">ZK</span>
+      <span class="brand-name">Zaid Khan</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#home" class="nav-link active" data-section="home" aria-current="page">Home</a>
+      <a href="#about" class="nav-link" data-section="about">About</a>
+      <a href="#work" class="nav-link" data-section="work">Work</a>
+      <a href="#education" class="nav-link" data-section="education">Education</a>
+      <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+      <a href="#identity" class="nav-link" data-section="identity">Identity</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+    </nav>
+
+    <a href="https://wa.me/917805833161" class="btn btn-primary btn-sm nav-cta magnetic" target="_blank" rel="noopener noreferrer" aria-label="Message Zaid Khan on WhatsApp">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span>
+    </a>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
+  <nav aria-label="Mobile primary navigation">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#work" class="mobile-link">Work</a>
+    <a href="#education" class="mobile-link">Education</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#identity" class="mobile-link">Identity</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </nav>
+  <a href="https://wa.me/917805833161" class="btn btn-primary mobile-menu-cta" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Me
+  </a>
+</div>
+
+<main id="main-content" tabindex="-1">
+
+  <!-- ======================================================
+       Hero
+       ====================================================== -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content" data-reveal>
+        <span class="badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Official Personal Profile</span>
+
+        <h1 class="hero-title">Hi, I&rsquo;m <span class="gradient-text">Zaid Khan</span></h1>
+        <p class="hero-headline">B.Tech Computer Science Engineer &middot; Medical Store Management &middot; Digital &amp; Tech Enthusiast</p>
+        <p class="hero-subheading">Computer Science Graduate • Medical Store Management • Tech &amp; Digital Work</p>
+        <p class="hero-desc">Official personal profile of Zaid Khan from Khandwa, Madhya Pradesh. I&rsquo;m a Computer Science Engineering graduate with experience in medical store management, customer support, digital work, and business operations.</p>
+
+        <div class="hero-cta">
+          <a href="https://wa.me/917805833161" class="btn btn-primary magnetic" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Me
+          </a>
+          <a href="tel:+917805833161" class="btn btn-secondary magnetic">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now
+          </a>
+          <a href="https://zaid123719.github.io/zaid-medical-store/" class="btn btn-ghost magnetic" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i> Medical Store Website
+          </a>
+        </div>
+
+        <ul class="trust-badges">
+          <li><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Official Profile</li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Khandwa, Madhya Pradesh</li>
+          <li><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Available on WhatsApp</li>
+          <li><i class="fa-solid fa-microchip" aria-hidden="true"></i> Tech &amp; Business</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual" data-reveal data-delay="150">
+        <div class="photo-frame tilt-card" id="photoFrame">
+          <div class="photo-glow" aria-hidden="true"></div>
+          <div class="photo-wrap">
+            <img src="zaid-profile.jpg" alt="Zaid Khan profile photo" id="profileImg" width="480" height="480" />
+            <div class="photo-fallback" id="photoFallback" hidden>
+              <span>ZK</span>
+            </div>
+            <div class="photo-reflection" aria-hidden="true"></div>
+          </div>
+
+          <span class="floating-badge fb-1"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span class="fb-label">B.Tech CSE</span></span>
+          <span class="floating-badge fb-2"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="fb-label">Khandwa, MP</span></span>
+          <span class="floating-badge fb-3"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i><span class="fb-label">Digital Work</span></span>
+          <span class="floating-badge fb-4"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i><span class="fb-label">Medical Store Management</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ======================================================
+       Quick Identity — Bento grid
+       ====================================================== -->
+  <section class="section identity-quick" aria-labelledby="quick-identity-heading">
+    <h2 id="quick-identity-heading" class="visually-hidden">Quick identity overview</h2>
+    <div class="container">
+      <div class="bento-grid">
+        <article class="bento-card glass tilt-card" data-reveal>
+          <div class="icon-box"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div>
+          <h3>Computer Science Graduate</h3>
+          <p>B.Tech CSE graduate with interest in software, web technologies, and digital platforms.</p>
+        </article>
+        <article class="bento-card glass tilt-card" data-reveal data-delay="100">
+          <div class="icon-box"><i class="fa-solid fa-capsules" aria-hidden="true"></i></div>
+          <h3>Medical Store Operations</h3>
+          <p>Practical experience in medicine stock, customers, suppliers, accounts, and daily store work.</p>
+        </article>
+        <article class="bento-card glass tilt-card" data-reveal data-delay="200">
+          <div class="icon-box"><i class="fa-solid fa-globe" aria-hidden="true"></i></div>
+          <h3>Digital &amp; Web Work</h3>
+          <p>Passionate about websites, online presence, digital tools, and modern technology.</p>
+        </article>
+        <article class="bento-card glass tilt-card" data-reveal data-delay="300">
+          <div class="icon-box"><i class="fa-solid fa-headset" aria-hidden="true"></i></div>
+          <h3>Customer Support</h3>
+          <p>Friendly and responsible communication for customers and professional contacts.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ======================================================
+       About Me
+       ====================================================== -->
+  <section id="about" class="section about">
+    <div class="container about-grid">
+      <div class="about-text" data-reveal>
+        <p class="eyebrow">About Me</p>
+        <h2>A practical blend of technology, business, and responsibility.</h2>
+        <p>I&rsquo;m a Computer Science Engineering graduate from Khandwa with a strong interest in technology, business, digital growth, and practical problem solving. Along with my education, I actively help in my family medical store, where I manage daily responsibilities such as customer support, medicines, stock, supplier coordination, accounts, deliveries, and business operations.</p>
+        <blockquote>&ldquo;Focused on learning, responsibility, and building a better professional future.&rdquo;</blockquote>
+      </div>
+      <aside class="about-card glass" data-reveal data-delay="150" aria-label="Quick facts">
+        <ul class="info-list">
+          <li><span>Location</span><strong>Khandwa, Madhya Pradesh</strong></li>
+          <li><span>Education</span><strong>B.Tech Computer Science Engineering</strong></li>
+          <li><span>Business</span><strong>Medical Store Management</strong></li>
+          <li><span>Interest</span><strong>Technology &amp; Digital Growth</strong></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ======================================================
+       What I Do
+       ====================================================== -->
+  <section id="work" class="section work">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">What I Do</p>
+        <h2>Where my time and effort go</h2>
+      </div>
+      <div class="work-grid">
+        <article class="work-card glass tilt-card" data-reveal>
+          <div class="icon-box"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i></div>
+          <h3>Medical Store Management</h3>
+          <p>Managing medicine availability, stock, customers, suppliers, accounts, and daily store responsibilities.</p>
+        </article>
+        <article class="work-card glass tilt-card" data-reveal data-delay="80">
+          <div class="icon-box"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+          <h3>Web Development &amp; Digital Work</h3>
+          <p>Interested in websites, digital tools, online presence, and technology-based solutions.</p>
+        </article>
+        <article class="work-card glass tilt-card" data-reveal data-delay="160">
+          <div class="icon-box"><i class="fa-solid fa-headset" aria-hidden="true"></i></div>
+          <h3>Customer Support</h3>
+          <p>Handling customers with patience, clarity, respect, and responsible communication.</p>
+        </article>
+        <article class="work-card glass tilt-card" data-reveal>
+          <div class="icon-box"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></div>
+          <h3>Business Operations</h3>
+          <p>Managing accounts, deliveries, coordination, stock updates, and practical business tasks.</p>
+        </article>
+        <article class="work-card glass tilt-card" data-reveal data-delay="80">
+          <div class="icon-box"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div>
+          <h3>Tech Learning</h3>
+          <p>Continuously improving skills in programming, web development, and modern digital tools.</p>
+        </article>
+        <article class="work-card glass tilt-card" data-reveal data-delay="160">
+          <div class="icon-box"><i class="fa-solid fa-globe" aria-hidden="true"></i></div>
+          <h3>Online Presence Building</h3>
+          <p>Creating professional digital identity through websites, social profiles, and business pages.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ======================================================
+       Education & Learning — timeline
+       ====================================================== -->
+  <section id="education" class="section education">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Education &amp; Learning</p>
+        <h2>Academic and practical grounding</h2>
+      </div>
+      <ol class="timeline">
+        <li class="timeline-item" data-reveal>
+          <div class="timeline-dot"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+          <div class="timeline-card glass">
+            <h3>B.Tech in Computer Science Engineering</h3>
+            <p>Completed Computer Science Engineering with interest in software, websites, digital platforms, and practical technology.</p>
+          </div>
+        </li>
+        <li class="timeline-item" data-reveal data-delay="100">
+          <div class="timeline-dot"><i class="fa-solid fa-capsules" aria-hidden="true"></i></div>
+          <div class="timeline-card glass">
+            <h3>Diploma in Pharmacy</h3>
+            <p>Built understanding of medical store basics, medicine-related work, and pharmacy operations.</p>
+          </div>
+        </li>
+        <li class="timeline-item" data-reveal data-delay="200">
+          <div class="timeline-dot"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+          <div class="timeline-card glass">
+            <h3>MERN Stack / Web Development</h3>
+            <p>Learning modern web development and building practical digital projects.</p>
+          </div>
+        </li>
+        <li class="timeline-item" data-reveal data-delay="300">
+          <div class="timeline-dot"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></div>
+          <div class="timeline-card glass">
+            <h3>Practical Business Experience</h3>
+            <p>Hands-on experience in customer support, accounts, stock, suppliers, deliveries, and medical store operations.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ======================================================
+       Skills & Strengths
+       ====================================================== -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Skills &amp; Strengths</p>
+        <h2>Tools and abilities I rely on</h2>
+      </div>
+
+      <div class="chip-list" data-reveal>
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">MERN Stack</span>
+        <span class="chip">MS Office</span>
+        <span class="chip">Customer Handling</span>
+        <span class="chip">Medical Store Operations</span>
+        <span class="chip">Stock Management</span>
+        <span class="chip">Supplier Coordination</span>
+        <span class="chip">Accounts Support</span>
+        <span class="chip">Business Management</span>
+        <span class="chip">Digital Marketing Basics</span>
+        <span class="chip">Online Presence Building</span>
+        <span class="chip">Video Editing</span>
+        <span class="chip">Communication</span>
+        <span class="chip">Problem Solving</span>
+      </div>
+
+      <div class="progress-grid">
+        <div class="progress-card glass" data-reveal>
+          <div class="progress-top"><span>Tech Skills</span><em>Growing</em></div>
+          <div class="progress-bar"><span style="width:60%"></span></div>
+        </div>
+        <div class="progress-card glass" data-reveal data-delay="80">
+          <div class="progress-top"><span>Business Skills</span><em>Strong</em></div>
+          <div class="progress-bar"><span style="width:88%"></span></div>
+        </div>
+        <div class="progress-card glass" data-reveal data-delay="160">
+          <div class="progress-top"><span>Customer Support</span><em>Practical</em></div>
+          <div class="progress-bar"><span style="width:80%"></span></div>
+        </div>
+        <div class="progress-card glass" data-reveal data-delay="240">
+          <div class="progress-top"><span>Digital Growth</span><em>Learning</em></div>
+          <div class="progress-bar"><span style="width:52%"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ======================================================
+       Professional Identity / Truecaller-style ID card
+       ====================================================== -->
+  <section id="identity" class="section identity">
+    <div class="container identity-grid">
+      <div class="identity-text" data-reveal>
+        <p class="eyebrow">Official Profile for Clear Identification</p>
+        <h2>Built so people can identify me with confidence</h2>
+        <p>This website is created as my official personal profile page so people can identify me clearly and connect with confidence. For genuine communication, business, medical store support, or professional contact, you can reach me through the links below.</p>
+      </div>
+
+      <div class="id-card-outer" data-reveal data-delay="150">
+        <div class="id-card">
+          <div class="id-card-shine" aria-hidden="true"></div>
+          <div class="id-card-top">
+            <span class="id-chip"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+            <span class="id-tag">OFFICIAL PROFILE</span>
+          </div>
+          <h3 class="id-name">Zaid Khan</h3>
+          <p class="id-status">Official Personal Profile</p>
+          <ul class="id-fields">
+            <li><span>Location</span><strong>Khandwa, Madhya Pradesh</strong></li>
+            <li><span>Contact</span><strong>Available via Call &amp; WhatsApp</strong></li>
+            <li><span>Website</span><strong>zaid123719.github.io/zaid-profile</strong></li>
+            <li><span>Connected&nbsp;With</span><strong>Zaid Medical Stores</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ======================================================
+       Connected with Zaid Medical Stores
+       ====================================================== -->
+  <section class="section connected" aria-labelledby="connected-heading">
+    <div class="container">
+      <div class="connected-inner glass" data-reveal>
+        <div class="connected-text">
+          <p class="eyebrow">Connected With</p>
+          <h2 id="connected-heading">Zaid Medical Stores</h2>
+          <p>Along with my personal and technical interests, I help manage my family medical store in Khandwa. You can also visit our medical store website for medicine availability, store details, WhatsApp support, and contact information.</p>
+          <a href="https://zaid123719.github.io/zaid-medical-store/" class="btn btn-primary magnetic" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Visit Zaid Medical Stores Website
+          </a>
+        </div>
+        <div class="connected-grid">
+          <div class="connected-card"><i class="fa-solid fa-capsules" aria-hidden="true"></i><span>Genuine medicine support</span></div>
+          <div class="connected-card"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp availability check</span></div>
+          <div class="connected-card"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Local Khandwa store</span></div>
+          <div class="connected-card"><i class="fa-solid fa-handshake" aria-hidden="true"></i><span>Customer-focused service</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- ======================================================
+       Contact
+       ====================================================== -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Contact Me</p>
+        <h2>For genuine communication, professional contact, or medical store-related support, feel free to connect.</h2>
+      </div>
+
+      <div class="contact-grid">
+        <article class="contact-card glass tilt-card" data-reveal>
+          <div class="icon-box"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+          <h3>Call</h3>
+          <p>+91 78058 33161</p>
+          <a href="tel:+917805833161" class="btn btn-secondary btn-sm magnetic">Call Now</a>
+        </article>
+        <article class="contact-card glass tilt-card" data-reveal data-delay="80">
+          <div class="icon-box"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+          <h3>WhatsApp</h3>
+          <p>+91 78058 33161</p>
+          <a href="https://wa.me/917805833161" class="btn btn-secondary btn-sm magnetic" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+        </article>
+        <article class="contact-card glass tilt-card" data-reveal data-delay="160">
+          <div class="icon-box"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+          <h3>Location</h3>
+          <p>Khandwa, Madhya Pradesh, India</p>
+        </article>
+        <article class="contact-card glass tilt-card" data-reveal data-delay="240">
+          <div class="icon-box"><i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i></div>
+          <h3>Medical Store Website</h3>
+          <p>Zaid Medical Stores</p>
+          <a href="https://zaid123719.github.io/zaid-medical-store/" class="btn btn-secondary btn-sm magnetic" target="_blank" rel="noopener noreferrer">Visit Website</a>
+        </article>
+      </div>
+
+      <div class="final-cta glass" data-reveal>
+        <h3>Let&rsquo;s Connect</h3>
+        <p>Reach out any time — a reply on WhatsApp or a quick call is the fastest way.</p>
+        <div class="final-cta-actions">
+          <a href="https://wa.me/917805833161" class="btn btn-primary magnetic" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Me</a>
+          <a href="tel:+917805833161" class="btn btn-secondary magnetic"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================================================
+     Footer
+     ====================================================== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="nav-brand">
+        <span class="brand-mark">ZK</span>
+        <span class="brand-name">Zaid Khan</span>
+      </a>
+      <p>Official Personal Profile Website</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Footer quick links">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#identity">Identity</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+917805833161"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call</a>
+      <a href="https://wa.me/917805833161" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+      <a href="https://zaid123719.github.io/zaid-medical-store/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i> Medical Store Website</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year">2026</span> Zaid Khan. All Rights Reserved.</p>
+    <p class="footer-note">Designed for professional identity, trust, and clear communication.</p>
+  </div>
+</footer>
+
+<!-- Floating action buttons -->
+<a href="https://wa.me/917805833161" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Message Zaid Khan on WhatsApp">
+  <span class="pulse-ring" aria-hidden="true"></span>
+  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<a href="tel:+917805833161" class="floating-call" aria-label="Call Zaid Khan">
+  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+</a>
+
+<script>
+/* =============================================================
+   Zaid Khan — Official Personal Profile
+   script.js — vanilla JS only, no dependencies, no build step.
+   This file is loaded at the very end of <body>, so the DOM is
+   already parsed by the time it runs — no need to wait on
+   DOMContentLoaded for anything that only reads/writes the DOM.
+
+   TABLE OF CONTENTS
+   1.  Feature detection & shared state
+   2.  Loading screen
+   3.  Scroll progress bar + navbar scroll state
+   4.  Active nav link (scrollspy)
+   5.  Mobile menu
+   6.  Custom cursor + spotlight glow (desktop only)
+   7.  Scroll reveal (IntersectionObserver)
+   8.  Card 3D tilt (desktop only)
+   9.  Magnetic buttons (desktop only)
+   10. Profile image fallback ("ZK" initials)
+   11. Footer year
+   ============================================================= */
+
+(function () {
+  "use strict";
+
+  var t0 = performance.now();
+
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var isTouchDevice =
+    window.matchMedia("(hover: none), (pointer: coarse)").matches ||
+    "ontouchstart" in window;
+
+  /* ---------- 2. Loading screen ---------- */
+  var loader = document.getElementById("loader");
+  var LOADER_MIN_MS = prefersReducedMotion ? 0 : 900; // keep it fast: ~0.9s
+
+  function hideLoader() {
+    if (!loader) return;
+    var elapsed = performance.now() - t0;
+    var wait = Math.max(0, LOADER_MIN_MS - elapsed);
+    window.setTimeout(function () {
+      loader.classList.add("is-hidden");
+      document.body.classList.remove("is-loading");
+      window.setTimeout(function () {
+        if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+      }, 700);
+    }, wait);
+  }
+
+  if (document.readyState === "complete") {
+    hideLoader();
+  } else {
+    window.addEventListener("load", hideLoader);
+  }
+
+  /* ---------- 3. Scroll progress bar + navbar scroll state ---------- */
+  var scrollProgressEl = document.getElementById("scrollProgress");
+  var navbarEl = document.getElementById("navbar");
+  var scrollScheduled = false;
+
+  function updateOnScroll() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+    if (scrollProgressEl) scrollProgressEl.style.width = progress + "%";
+    if (navbarEl) navbarEl.classList.toggle("scrolled", scrollTop > 40);
+
+    scrollScheduled = false;
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollScheduled) {
+        scrollScheduled = true;
+        window.requestAnimationFrame(updateOnScroll);
+      }
+    },
+    { passive: true }
+  );
+  updateOnScroll(); // set correct initial state on load (e.g. after a refresh mid-page)
+
+  /* ---------- 4. Active nav link (scrollspy) ---------- */
+  var sections = document.querySelectorAll("main section[id]");
+  var navLinks = document.querySelectorAll(".nav-link");
+
+  if ("IntersectionObserver" in window && sections.length) {
+    var sectionObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var id = entry.target.getAttribute("id");
+          navLinks.forEach(function (link) {
+            var isMatch = link.dataset.section === id;
+            link.classList.toggle("active", isMatch);
+            if (isMatch) {
+              link.setAttribute("aria-current", "page");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        });
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+    );
+    sections.forEach(function (sec) {
+      sectionObserver.observe(sec);
+    });
+  }
+
+  /* ---------- 5. Mobile menu ---------- */
+  var hamburgerBtn = document.getElementById("hamburgerBtn");
+  var mobileMenu = document.getElementById("mobileMenu");
+
+  function openMobileMenu() {
+    if (!mobileMenu || !hamburgerBtn) return;
+    mobileMenu.classList.add("open");
+    hamburgerBtn.classList.add("active");
+    hamburgerBtn.setAttribute("aria-expanded", "true");
+    mobileMenu.setAttribute("aria-hidden", "false");
+    document.body.classList.add("menu-open");
+  }
+
+  function closeMobileMenu() {
+    if (!mobileMenu || !hamburgerBtn) return;
+    mobileMenu.classList.remove("open");
+    hamburgerBtn.classList.remove("active");
+    hamburgerBtn.setAttribute("aria-expanded", "false");
+    mobileMenu.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("menu-open");
+  }
+
+  if (hamburgerBtn && mobileMenu) {
+    hamburgerBtn.addEventListener("click", function () {
+      if (mobileMenu.classList.contains("open")) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    // Close as soon as any mobile link is clicked, so the menu never
+    // lingers over the section the person just navigated to.
+    mobileMenu.querySelectorAll(".mobile-link").forEach(function (link) {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeMobileMenu();
+    });
+  }
+
+  /* ---------- 6. Custom cursor + spotlight glow (desktop only) ---------- */
+  if (!isTouchDevice && !prefersReducedMotion) {
+    var cursorDot = document.getElementById("cursorDot");
+    var cursorRing = document.getElementById("cursorRing");
+    var cursorGlow = document.getElementById("cursorGlow");
+
+    var mouseX = window.innerWidth / 2;
+    var mouseY = window.innerHeight / 2;
+    var ringX = mouseX;
+    var ringY = mouseY;
+
+    window.addEventListener("mousemove", function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (cursorDot) {
+        cursorDot.style.transform = "translate(" + mouseX + "px," + mouseY + "px) translate(-50%,-50%)";
+      }
+      if (cursorGlow) {
+        cursorGlow.style.setProperty("--x", mouseX + "px");
+        cursorGlow.style.setProperty("--y", mouseY + "px");
+      }
+    });
+
+    // The ring lags gently behind the raw cursor position (lerp), which
+    // is what makes it feel smooth instead of robotic.
+    function animateCursorRing() {
+      ringX += (mouseX - ringX) * 0.16;
+      ringY += (mouseY - ringY) * 0.16;
+      if (cursorRing) {
+        cursorRing.style.transform = "translate(" + ringX + "px," + ringY + "px) translate(-50%,-50%)";
+      }
+      window.requestAnimationFrame(animateCursorRing);
+    }
+    window.requestAnimationFrame(animateCursorRing);
+
+    var hoverTargets = document.querySelectorAll(
+      "a, button, .tilt-card, .chip, .photo-frame, input, textarea"
+    );
+    hoverTargets.forEach(function (el) {
+      el.addEventListener("mouseenter", function () {
+        if (cursorRing) cursorRing.classList.add("cursor-hover");
+      });
+      el.addEventListener("mouseleave", function () {
+        if (cursorRing) cursorRing.classList.remove("cursor-hover");
+      });
+    });
+
+    document.body.classList.add("has-custom-cursor");
+  }
+
+  /* ---------- 7. Scroll reveal ---------- */
+  var revealEls = document.querySelectorAll("[data-reveal]");
+
+  if ("IntersectionObserver" in window && revealEls.length) {
+    var revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var delay = parseInt(entry.target.getAttribute("data-delay") || "0", 10);
+          window.setTimeout(function () {
+            entry.target.classList.add("in-view");
+          }, delay);
+          revealObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+    );
+    revealEls.forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  } else {
+    // No IntersectionObserver support: just show everything immediately
+    // rather than leaving content invisible.
+    revealEls.forEach(function (el) {
+      el.classList.add("in-view");
+    });
+  }
+
+  /* ---------- 8. Card 3D tilt (desktop only) ---------- */
+  if (!isTouchDevice && !prefersReducedMotion) {
+    document.querySelectorAll(".tilt-card").forEach(function (card) {
+      card.addEventListener("mousemove", function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var rotateX = (y / rect.height - 0.5) * -7;
+        var rotateY = (x / rect.width - 0.5) * 7;
+        card.style.transform =
+          "perspective(900px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+      });
+      card.addEventListener("mouseleave", function () {
+        card.style.transform = "perspective(900px) rotateX(0) rotateY(0)";
+      });
+    });
+  }
+
+  /* ---------- 9. Magnetic buttons (desktop only) ---------- */
+  if (!isTouchDevice && !prefersReducedMotion) {
+    document.querySelectorAll(".magnetic").forEach(function (btn) {
+      btn.addEventListener("mousemove", function (e) {
+        var rect = btn.getBoundingClientRect();
+        var relX = e.clientX - rect.left - rect.width / 2;
+        var relY = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = "translate(" + relX * 0.22 + "px," + relY * 0.32 + "px)";
+      });
+      btn.addEventListener("mouseleave", function () {
+        btn.style.transform = "translate(0,0)";
+      });
+    });
+  }
+
+  /* ---------- 10. Profile image fallback ("ZK" initials) ---------- */
+  var profileImg = document.getElementById("profileImg");
+  var photoFallback = document.getElementById("photoFallback");
+
+  function showPhotoFallback() {
+    if (profileImg) profileImg.style.display = "none";
+    if (photoFallback) photoFallback.hidden = false;
+  }
+
+  if (profileImg) {
+    // Covers the case where the image already failed before this script
+    // ran (e.g. served from cache as a 404), not just future failures.
+    if (profileImg.complete && profileImg.naturalWidth === 0) {
+      showPhotoFallback();
+    } else {
+      profileImg.addEventListener("error", showPhotoFallback);
+    }
+  }
+
+  /* ---------- 11. Footer year ---------- */
+  var yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+})();
+
+</script>
+</body>
+</html>
