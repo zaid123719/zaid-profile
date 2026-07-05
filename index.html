@@ -18,14 +18,14 @@
   <meta property="og:description" content="Official personal profile of Zaid Khan from Khandwa, Madhya Pradesh." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://zaid123719.github.io/zaid-profile/" />
-  <meta property="og:image" content="https://zaid123719.github.io/zaid-profile/zaid-profile.jpg" />
+  <meta property="og:image" content="https://zaid123719.github.io/zaid-profile/zaid-profile.jpg?v=20260705-fix1" />
   <meta property="og:locale" content="en_IN" />
 
   <!-- ============ Twitter Card ============ -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Zaid Khan | Official Personal Profile" />
   <meta name="twitter:description" content="Official personal profile of Zaid Khan from Khandwa, Madhya Pradesh." />
-  <meta name="twitter:image" content="https://zaid123719.github.io/zaid-profile/zaid-profile.jpg" />
+  <meta name="twitter:image" content="https://zaid123719.github.io/zaid-profile/zaid-profile.jpg?v=20260705-fix1" />
 
   <!-- ============ iPhone / mobile polish ============ -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -803,7 +803,7 @@ body:not(.has-custom-cursor) .cursor-glow { display: none; }
     "jobTitle": "Computer Science Engineering Graduate",
     "description": "Official personal profile of Zaid Khan from Khandwa, Madhya Pradesh.",
     "telephone": "+91 78058 33161",
-    "image": "https://zaid123719.github.io/zaid-profile/zaid-profile.jpg",
+    "image": "https://zaid123719.github.io/zaid-profile/zaid-profile.jpg?v=20260705-fix1",
     "url": "https://zaid123719.github.io/zaid-profile/",
     "address": {
       "@type": "PostalAddress",
@@ -940,7 +940,7 @@ body:not(.has-custom-cursor) .cursor-glow { display: none; }
         <div class="photo-frame tilt-card" id="photoFrame">
           <div class="photo-glow" aria-hidden="true"></div>
           <div class="photo-wrap">
-            <img src="zaid-profile.jpg" alt="Zaid Khan profile photo" id="profileImg" width="480" height="480" />
+            <img src="./zaid-profile.jpg?v=20260705-fix1" alt="Zaid Khan profile photo" id="profileImg" width="480" height="480" decoding="async" fetchpriority="high" />
             <div class="photo-fallback" id="photoFallback" hidden>
               <span>ZK</span>
             </div>
@@ -1578,23 +1578,63 @@ body:not(.has-custom-cursor) .cursor-glow { display: none; }
     });
   }
 
-  /* ---------- 10. Profile image fallback ("ZK" initials) ---------- */
+  /* ---------- 10. Profile image loader + fallback ("ZK" initials) ---------- */
   var profileImg = document.getElementById("profileImg");
   var photoFallback = document.getElementById("photoFallback");
+
+  /*
+    Photo fix for GitHub Pages:
+    - First tries the normal repo image with a cache-busting version.
+    - Then tries common alternate names/extensions.
+    - Last tries GitHub raw file as a backup.
+    - Only if every option fails, it shows the premium "ZK" fallback.
+  */
+  var photoSources = [
+    "./zaid-profile.jpg?v=20260705-fix1",
+    "zaid-profile.jpg?v=20260705-fix1",
+    "./zaid-profile.jpeg?v=20260705-fix1",
+    "./zaid-profile.png?v=20260705-fix1",
+    "./profile.jpg?v=20260705-fix1",
+    "https://raw.githubusercontent.com/zaid123719/zaid-profile/main/zaid-profile.jpg?v=20260705-fix1"
+  ];
+  var photoTryIndex = 0;
 
   function showPhotoFallback() {
     if (profileImg) profileImg.style.display = "none";
     if (photoFallback) photoFallback.hidden = false;
   }
 
-  if (profileImg) {
-    // Covers the case where the image already failed before this script
-    // ran (e.g. served from cache as a 404), not just future failures.
-    if (profileImg.complete && profileImg.naturalWidth === 0) {
-      showPhotoFallback();
-    } else {
-      profileImg.addEventListener("error", showPhotoFallback);
+  function showProfilePhoto() {
+    if (profileImg) profileImg.style.display = "block";
+    if (photoFallback) photoFallback.hidden = true;
+  }
+
+  function tryNextPhotoSource() {
+    if (!profileImg) return;
+
+    photoTryIndex += 1;
+
+    if (photoTryIndex < photoSources.length) {
+      profileImg.src = photoSources[photoTryIndex];
+      return;
     }
+
+    showPhotoFallback();
+  }
+
+  if (profileImg) {
+    profileImg.addEventListener("load", showProfilePhoto);
+    profileImg.addEventListener("error", tryNextPhotoSource);
+
+    // Force the first clean request, even if browser/GitHub cached an old failed image.
+    profileImg.src = photoSources[0];
+
+    // Covers the case where the image already failed before this script ran.
+    setTimeout(function () {
+      if (profileImg.complete && profileImg.naturalWidth === 0) {
+        tryNextPhotoSource();
+      }
+    }, 300);
   }
 
   /* ---------- 11. Footer year ---------- */
